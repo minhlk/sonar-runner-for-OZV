@@ -1,0 +1,6 @@
+vendor/**/*.php
+node_modules/**/*.js
+.sonar/**/*
+.scannerwork/
+sonar-project.properties
+run.sh

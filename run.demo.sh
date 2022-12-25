@@ -6,7 +6,7 @@ SONAR_URL="https://sonarqube.example.com"
 SONAR_TOKEN="YOUR_SONARQUBE_TOKEN"
 
 # Set the GitHub repository information
-GITHUB_REPOSITORY="owner/repository"
+SOURCE_FOLDER_LOCATION="owner/repository"
 
 # Set the branch and commit information
 BRANCH_NAME="branch_name"
@@ -21,10 +21,10 @@ REPORT_OUTPUT_DIRECTORY="/path/to/report/output"
 GIT_EXECUTABLE="/path/to/git"
 
 # Get the list of modified files in the current branch compared to the master branch
-MODIFIED_FILES=$($GIT_EXECUTABLE diff --name-only master..$BRANCH_NAME)
+MODIFIED_FILES=$($GIT_EXECUTABLE diff --name-only master..$BRANCH_NAME | tr '\n' ',')
 
 # Set the SonarQube project properties
-echo "sonar.projectKey=${GITHUB_REPOSITORY}" > $SONAR_PROJECT_PROPERTIES
+SOURCE_echo "sonar.projectKey=${FOLDER_LOCATION}" > $SONAR_PROJECT_PROPERTIES
 echo "sonar.host.url=${SONAR_URL}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.login=${SONAR_TOKEN}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.sources=${MODIFIED_FILES}" >> $SONAR_PROJECT_PROPERTIES
