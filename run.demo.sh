@@ -14,9 +14,6 @@ BRANCH_NAME="branch_name"
 # Set the location of the SonarQube project properties file
 SONAR_PROJECT_PROPERTIES="/path/to/sonar-project.properties"
 
-# Set the location of the report output directory
-REPORT_OUTPUT_DIRECTORY="/path/to/report/output"
-
 # Set the location of the Git executable
 GIT_EXECUTABLE="/path/to/git"
 
@@ -29,10 +26,6 @@ echo "sonar.host.url=${SONAR_URL}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.login=${SONAR_TOKEN}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.sources=${MODIFIED_FILES}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.exclusions=**/vendor/**,**/node_modules/**" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.tests=." >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.test.inclusions=**/*Test*.php,**/*Spec*.php" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.coverage.exclusions=**/vendor/**,**/node_modules/**" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.testExecutionReportPaths=${REPORT_OUTPUT_DIRECTORY}/test-report.xml" >> $SONAR_PROJECT_PROPERTIES
 
 # Run the SonarQube Scanner
 ${SONAR_SCANNER_HOME}/bin/sonar-scanner \

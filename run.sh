@@ -6,13 +6,10 @@ SONAR_TOKEN="sqp_0fa8561c119afbd544833c77c4deef3b2e3b39e6"
 GITHUB_REPOSITORY="test-project"
 
 # Set the branch and commit information
-BRANCH_NAME="test-branch"
+BRANCH_NAME="test-branch-2"
 
 # Set the location of the SonarQube project properties file
 SONAR_PROJECT_PROPERTIES="sonar-project.properties"
-
-# Set the location of the report output directory
-REPORT_OUTPUT_DIRECTORY="report"
 
 # Set the location of the Git executable
 GIT_EXECUTABLE="git"
@@ -26,10 +23,6 @@ echo "sonar.host.url=${SONAR_URL}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.login=${SONAR_TOKEN}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.sources=${MODIFIED_FILES}" >> $SONAR_PROJECT_PROPERTIES
 echo "sonar.exclusions=**/vendor/**,**/node_modules/**" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.tests=." >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.test.inclusions=**/*Test*.php,**/*Spec*.php" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.coverage.exclusions=**/vendor/**,**/node_modules/**" >> $SONAR_PROJECT_PROPERTIES
-echo "sonar.testExecutionReportPaths=${REPORT_OUTPUT_DIRECTORY}/test-report.xml" >> $SONAR_PROJECT_PROPERTIES
 
 # Run the SonarQube Scanner
 sonar-scanner \
