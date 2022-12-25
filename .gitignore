@@ -2,5 +2,5 @@ vendor/**/*.php
 node_modules/**/*.js
 .sonar/**/*
 .scannerwork/
+file_changes/*
 sonar-project.properties
-run.sh
