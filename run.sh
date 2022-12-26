@@ -60,7 +60,7 @@ rm -rf file_changes && mkdir file_changes
 
 # Change to the project directory and get the list of modified files
 cd "$SOURCE_FOLDER"
-MODIFIED_FILES=$($GIT_EXECUTABLE diff --name-only "$BASE_BRANCH_NAME".."$BRANCH_NAME" | xargs -I{} cp {} "$CURRENT_PATH/file_changes")
+MODIFIED_FILES=$($GIT_EXECUTABLE diff --name-only "origin/$BASE_BRANCH_NAME".."origin/$BRANCH_NAME" | xargs -I{} cp {} "$CURRENT_PATH/file_changes")
 
 # Return to the current path and set the modified files list
 cd "$CURRENT_PATH"
